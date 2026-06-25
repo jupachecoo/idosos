@@ -1,63 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protecao Contra Golpes</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Protecao Contra Golpes</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Protecao Contra Golpes</h1>
-        <p>Ajudando idosos a reconhecer tentativas de golpe</p>
-    </header>
+<header class="cabecalho">
+    <h1>Protecao Contra Golpes</h1>
+    <p>Aplicativo de ajuda para idosos</p>
+</header>
 
-    <!-- Barra de acessibilidade -->
-    <section class="barra-acessibilidade">
-        <button id="botao-contraste">Alto Contraste</button>
-        <button id="botao-aumentar">Aumentar Letra</button>
-        <button id="botao-diminuir">Diminuir Letra</button>
+<section class="barra-acessibilidade">
+
+    <button id="botao-contraste">
+        Alto Contraste
+    </button>
+
+    <button id="botao-aumentar">
+        Aumentar Letra
+    </button>
+
+    <button id="botao-diminuir">
+        Diminuir Letra
+    </button>
+
+</section>
+
+<main class="conteudo">
+
+    <section class="cartao">
+
+        <h2>Verificar Mensagem</h2>
+
+        <textarea
+        id="texto-mensagem"
+        placeholder="Cole aqui a mensagem recebida"
+        rows="8"></textarea>
+
+        <button id="botao-analisar">
+            Analisar Mensagem
+        </button>
+
+        <div id="resultado"></div>
+
     </section>
 
-    <!-- Verificador de mensagens -->
-    <main class="conteudo-principal">
+    <section class="cartao">
 
-        <section class="caixa-verificacao">
-            <h2>Verificar Mensagem</h2>
+        <h2>Dicas Para Nao Cair Em Golpes</h2>
 
-            <label for="texto-mensagem">
-                Cole aqui a mensagem recebida:
-            </label>
+        <ul>
+            <li>Nunca informe sua senha.</li>
+            <li>Nunca compartilhe codigos recebidos por SMS.</li>
+            <li>Desconfie de premios inesperados.</li>
+            <li>Desconfie de mensagens com urgencia.</li>
+            <li>Bancos nao pedem senha por telefone.</li>
+            <li>Confirme pedidos de PIX com familiares.</li>
+            <li>Nao clique em links desconhecidos.</li>
+            <li>Antes de pagar, confira o nome do destinatario.</li>
+            <li>Golpistas tentam criar pressao e medo.</li>
+            <li>Na duvida, pare e consulte alguem de confianca.</li>
+        </ul>
 
-            <textarea
-                id="texto-mensagem"
-                rows="8"
-                placeholder="Digite ou cole a mensagem recebida">
-            </textarea>
+    </section>
 
-            <button id="botao-analisar">
-                Analisar Mensagem
-            </button>
+    <section class="cartao">
 
-            <div id="resultado"></div>
-        </section>
+        <h2>Checklist Antes De Fazer PIX</h2>
 
-        <!-- Dicas -->
-        <section class="caixa-dicas">
-            <h2>Dicas de Seguranca</h2>
+        <ul>
+            <li>Verifique o nome da pessoa.</li>
+            <li>Confira o valor.</li>
+            <li>Confirme o motivo da transferencia.</li>
+            <li>Fale com a pessoa por telefone se necessario.</li>
+            <li>Nunca transfira dinheiro por pressao.</li>
+        </ul>
 
-            <ul>
-                <li>Nunca informe senhas.</li>
-                <li>Desconfie de premios inesperados.</li>
-                <li>Nao clique em links desconhecidos.</li>
-                <li>Confirme informacoes com familiares.</li>
-                <li>Bancos nao pedem senha por mensagem.</li>
-            </ul>
-        </section>
+    </section>
 
-    </main>
+</main>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

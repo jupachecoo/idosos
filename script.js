@@ -1,84 +1,113 @@
-// Controle do tamanho da fonte
+document.addEventListener("DOMContentLoaded", function(){
 
-let tamanhoFonte = 18;
+    let tamanhoFonte = 20;
 
-// Elementos
+    const botaoContraste =
+    document.getElementById("botao-contraste");
 
-const botaoContraste = document.getElementById("botao-contraste");
-const botaoAumentar = document.getElementById("botao-aumentar");
-const botaoDiminuir = document.getElementById("botao-diminuir");
-const botaoAnalisar = document.getElementById("botao-analisar");
+    const botaoAumentar =
+    document.getElementById("botao-aumentar");
 
-const resultado = document.getElementById("resultado");
+    const botaoDiminuir =
+    document.getElementById("botao-diminuir");
 
-// Alternar alto contraste
+    const botaoAnalisar =
+    document.getElementById("botao-analisar");
 
-botaoContraste.addEventListener("click", () => {
-    document.body.classList.toggle("alto-contraste");
-});
+    const resultado =
+    document.getElementById("resultado");
 
-// Aumentar letra
+    // Alto contraste
 
-botaoAumentar.addEventListener("click", () => {
-    tamanhoFonte += 2;
-    document.body.style.fontSize = tamanhoFonte + "px";
-});
+    botaoContraste.addEventListener("click", function(){
 
-// Diminuir letra
+        document.body.classList.toggle("alto-contraste");
 
-botaoDiminuir.addEventListener("click", () => {
-    if (tamanhoFonte > 12) {
-        tamanhoFonte -= 2;
-        document.body.style.fontSize = tamanhoFonte + "px";
-    }
-});
+    });
 
-// Analise simples de golpes
+    // Aumentar fonte
 
-botaoAnalisar.addEventListener("click", () => {
+    botaoAumentar.addEventListener("click", function(){
 
-    const mensagem =
+        tamanhoFonte += 2;
+
+        document.body.style.fontSize =
+        tamanhoFonte + "px";
+
+    });
+
+    // Diminuir fonte
+
+    botaoDiminuir.addEventListener("click", function(){
+
+        if(tamanhoFonte > 14){
+
+            tamanhoFonte -= 2;
+
+            document.body.style.fontSize =
+            tamanhoFonte + "px";
+        }
+
+    });
+
+    // Detector de golpes
+
+    botaoAnalisar.addEventListener("click", function(){
+
+        const texto =
         document.getElementById("texto-mensagem")
         .value
         .toLowerCase();
 
-    const palavrasSuspeitas = [
-        "pix",
-        "premio",
-        "urgente",
-        "senha",
-        "clique aqui",
-        "transferencia",
-        "ganhou",
-        "cartao bloqueado",
-        "codigo",
-        "banco"
-    ];
+        const palavrasSuspeitas = [
 
-    let encontrouRisco = false;
+            "pix",
+            "urgente",
+            "premio",
+            "ganhou",
+            "senha",
+            "clique aqui",
+            "transferencia",
+            "codigo",
+            "cartao bloqueado",
+            "banco"
 
-    for (let palavra of palavrasSuspeitas) {
+        ];
 
-        if (mensagem.includes(palavra)) {
-            encontrouRisco = true;
-            break;
+        let risco = false;
+
+        for(let palavra of palavrasSuspeitas){
+
+            if(texto.includes(palavra)){
+
+                risco = true;
+                break;
+            }
         }
-    }
 
-    if (encontrouRisco) {
+        if(risco){
 
-        resultado.style.backgroundColor = "#ffdddd";
-        resultado.style.color = "#990000";
+            resultado.style.background =
+            "#ffdddd";
 
-        resultado.innerHTML =
-            "ATENCAO: Esta mensagem possui sinais comuns de golpe. Nao informe dados pessoais, senhas ou realize pagamentos sem confirmar a origem.";
+            resultado.style.color =
+            "#990000";
 
-    } else {
+            resultado.innerHTML =
+            "ATENCAO. Esta mensagem possui indicios comuns de golpe. Nao envie dinheiro, nao informe senhas e confirme as informacoes com alguem de confianca.";
 
-        resultado.style.backgroundColor = "#ddffdd";
-        resultado.style.color = "#006600";
+        }else{
 
-        resultado.innerHTML =
-            "Nenhum sinal comum de golpe foi encontrado. Mesmo assim, mantenha cuidado antes de compartilhar informacoes.";
-    }
+            resultado.style.background =
+            "#ddffdd";
+
+            resultado.style.color =
+            "#006600";
+
+            resultado.innerHTML =
+            "Nenhum indicio comum de golpe foi encontrado. Mesmo assim mantenha a atencao.";
+        }
+
+    });
+
 });
