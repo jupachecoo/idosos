@@ -1,48 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Security for Seniors</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Guia contra Golpes</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-    <header>
-        <h1>Digital Security Guide</h1>
-        <p>Learn how to protect yourself on the internet in a simple way</p>
+    <header class="cabecalho">
+        <h1>Guia de Seguranca</h1>
+        <div class="controles-acessibilidade">
+            <button id="btn-aumentar" class="botao-acao">Aumentar Letra</button>
+            <button id="btn-diminuir" class="botao-acao">Diminuir Letra</button>
+            <button id="btn-contraste" class="botao-acao">Alto Contraste</button>
+        </div>
     </header>
 
-    <main>
-        <section class="introducao">
-            <p><strong>Hello!</strong> The internet is a wonderful place to chat and learn, but we need to take some precautions. Check out the important tips below:</p>
+    <main class="conteudo">
+        <section class="cartao-dica">
+            <h2>1. Falso sequestro ou pedido de dinheiro</h2>
+            <p>Se alguem pedir dinheiro urgente por mensagem, nao envie. Ligue para a pessoa para confirmar se e ela mesma.</p>
         </section>
 
-        <article class="card-dica alerta">
-            <h2> 1. Watch Out for Links on WhatsApp</h2>
-            <p>If you received a message from a bank, a famous brand, or even an acquaintance saying you won a prize or need to update your data urgently, <strong>do not click on the link</strong>.</p>
-            <p>Real banks do not ask for passwords or urgent data via message.</p>
-            <button class="botao-saber-mais">I understand this tip</button>
-        </article>
+        <section class="cartao-dica">
+            <h2>2. Ligacao falsa do banco</h2>
+            <p>O banco nunca liga pedindo sua senha ou para buscar seu cartao em casa. Se receber essa ligacao, desligue imediatamente.</p>
+        </section>
 
-        <article class="card-dica senha">
-            <h2> 2. Create Secure Passwords</h2>
-            <p>Avoid using your birth date, grandchildren's names, or simple sequences like "123456".</p>
-            <p>A good tip is to use a phrase you like and mix it with numbers. Example: <strong>CoffeeWithCake2026</strong>. Write it down in a notebook at home so you don't forget.</p>
-            <button class="botao-saber-mais">I understand this tip</button>
-        </article>
-
-        <article class="card-dica ajuda">
-            <h2> 3. When in Doubt, Ask for Help</h2>
-            <p>If something seems strange, too good to be true, or if you are afraid of doing an operation on your phone, <strong>stop and ask for help</strong> from a child, grandchild, or someone you fully trust.</p>
-            <p>It's better to ask twice than to fall into a trap.</p>
-            <button class="botao-saber-mais">I understand this tip</button>
-        </article>
+        <section class="cartao-dica">
+            <h2>3. Links estranhos no celular</h2>
+            <p>Nao clique em links de promocoes ou avisos de contas bloqueadas que chegam por mensagem. Apague na hora e consulte o gerente.</p>
+        </section>
     </main>
-
-    <footer>
-        Questions? Call a family member or talk to your bank.
-    </footer>
 
     <script src="script.js"></script>
 </body>

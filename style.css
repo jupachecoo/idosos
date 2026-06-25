@@ -1,122 +1,85 @@
-/* GENERAL CONFIGURATIONS AND ACCESSIBILITY */
-* {
-    box-sizing: border-box;
+/* Variaveis de cores do tema padrao claro */
+:root {
+    --cor-fundo: #f4f4f9;
+    --cor-texto: #333333;
+    --cor-fundo-cartao: #ffffff;
+    --cor-borda: #cccccc;
+    --cor-botao: #0056b3;
+    --cor-texto-botao: #ffffff;
+    --cor-destaque: #d9534f;
+}
+
+/* Variaveis de cores do modo de alto contraste */
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+    --cor-fundo-cartao: #1a1a1a;
+    --cor-borda: #ffff00;
+    --cor-botao: #ffff00;
+    --cor-texto-botao: #000000;
+    --cor-destaque: #ffcc00;
+}
+
+/* Configuracoes gerais da pagina */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px; /* Tamanho inicial da fonte */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-body {
-    background-color: #f4f6f9;
-    color: #1a1a1a;
-    line-height: 1.6;
-    padding-bottom: 80px;
-}
-
-/* APPLICATION HEADER */
-header {
-    background-color: #004687;
-    color: white;
+/* Estilos da area superior */
+.cabecalho {
     text-align: center;
-    padding: 25px 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    background-color: var(--cor-fundo-cartao);
+    border-bottom: 2px solid var(--cor-borda);
 }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
+.controles-acessibilidade {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-header p {
-    font-size: 1.2rem;
+/* Aparencia dos botoes */
+.botao-acao {
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+    border: 2px solid var(--cor-borda);
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
     font-weight: bold;
-    color: #e0f0ff;
 }
 
-/* MAIN CONTENT */
-main {
-    max-width: 600px;
+.botao-acao:hover {
+    opacity: 0.9;
+}
+
+/* Area de conteudo principal */
+.conteudo {
+    max-width: 800px;
     margin: 20px auto;
     padding: 0 15px;
 }
 
-.introducao {
-    background-color: #ffffff;
+/* Visual dos blocos de texto */
+.cartao-dica {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda);
     padding: 20px;
-    border-radius: 12px;
-    border-left: 8px solid #004687;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.introducao p {
-    font-size: 1.2rem;
-}
-
-/* TIP CARDS */
-.card-dica {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 25px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border: 2px solid #e0e0e0;
-    transition: opacity 0.3s ease;
-}
-
-/* Alert colors */
-.card-dica.alerta { border-top: 8px solid #d9381e; }
-.card-dica.senha { border-top: 8px solid #2e7d32; }
-.card-dica.ajuda { border-top: 8px solid #f57c00; }
-
-.card-dica h2 {
-    font-size: 1.5rem;
-    color: #000000;
-    margin-bottom: 12px;
-}
-
-.card-dica p {
-    font-size: 1.2rem;
-    color: #2b2b2b;
-    margin-bottom: 15px;
-}
-
-/* Dynamic class for when the card is marked as read */
-.card-dica.lido {
-    opacity: 0.6;
-    border: 2px solid #2e7d32;
-    background-color: #e8f5e9;
-}
-
-/* LARGE BUTTONS FOR EASY CLICKING */
-.botao-saber-mais {
-    display: block;
-    width: 100%;
-    background-color: #004687;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
     border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.botao-saber-mais:hover, .botao-saber-mais:active {
-    background-color: #002d58;
-}
-
-/* FIXED SUPPORT FOOTER */
-footer {
-    background-color: #222222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1.1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+.cartao-dica h2 {
+    color: var(--cor-destaque);
+    margin-top: 0;
 }
