@@ -3,35 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia contra Golpes</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Protecao Contra Golpes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="cabecalho">
-        <h1>Guia de Seguranca</h1>
-        <div class="controles-acessibilidade">
-            <button id="btn-aumentar" class="botao-acao">Aumentar Letra</button>
-            <button id="btn-diminuir" class="botao-acao">Diminuir Letra</button>
-            <button id="btn-contraste" class="botao-acao">Alto Contraste</button>
-        </div>
+    <header>
+        <h1>Protecao Contra Golpes</h1>
+        <p>Ajudando idosos a reconhecer tentativas de golpe</p>
     </header>
 
-    <main class="conteudo">
-        <section class="cartao-dica">
-            <h2>1. Falso sequestro ou pedido de dinheiro</h2>
-            <p>Se alguem pedir dinheiro urgente por mensagem, nao envie. Ligue para a pessoa para confirmar se e ela mesma.</p>
+    <!-- Barra de acessibilidade -->
+    <section class="barra-acessibilidade">
+        <button id="botao-contraste">Alto Contraste</button>
+        <button id="botao-aumentar">Aumentar Letra</button>
+        <button id="botao-diminuir">Diminuir Letra</button>
+    </section>
+
+    <!-- Verificador de mensagens -->
+    <main class="conteudo-principal">
+
+        <section class="caixa-verificacao">
+            <h2>Verificar Mensagem</h2>
+
+            <label for="texto-mensagem">
+                Cole aqui a mensagem recebida:
+            </label>
+
+            <textarea
+                id="texto-mensagem"
+                rows="8"
+                placeholder="Digite ou cole a mensagem recebida">
+            </textarea>
+
+            <button id="botao-analisar">
+                Analisar Mensagem
+            </button>
+
+            <div id="resultado"></div>
         </section>
 
-        <section class="cartao-dica">
-            <h2>2. Ligacao falsa do banco</h2>
-            <p>O banco nunca liga pedindo sua senha ou para buscar seu cartao em casa. Se receber essa ligacao, desligue imediatamente.</p>
+        <!-- Dicas -->
+        <section class="caixa-dicas">
+            <h2>Dicas de Seguranca</h2>
+
+            <ul>
+                <li>Nunca informe senhas.</li>
+                <li>Desconfie de premios inesperados.</li>
+                <li>Nao clique em links desconhecidos.</li>
+                <li>Confirme informacoes com familiares.</li>
+                <li>Bancos nao pedem senha por mensagem.</li>
+            </ul>
         </section>
 
-        <section class="cartao-dica">
-            <h2>3. Links estranhos no celular</h2>
-            <p>Nao clique em links de promocoes ou avisos de contas bloqueadas que chegam por mensagem. Apague na hora e consulte o gerente.</p>
-        </section>
     </main>
 
     <script src="script.js"></script>

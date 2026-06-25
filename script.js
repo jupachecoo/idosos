@@ -1,29 +1,84 @@
-// Seleciona os botoes e o corpo do site
-const btnAumentar = document.getElementById('btn-aumentar');
-const btnDiminuir = document.getElementById('btn-diminuir');
-const btnContraste = document.getElementById('btn-contraste');
-const corpoPagina = document.body;
+// Controle do tamanho da fonte
 
-// Define o tamanho inicial da letra
 let tamanhoFonte = 18;
 
-// Funcao para aumentar a letra ate o limite de 32 pixels
-btnAumentar.addEventListener('click', function() {
-    if (tamanhoFonte < 32) {
-        tamanhoFonte += 2;
-        corpoPagina.style.fontSize = tamanhoFonte + 'px';
-    }
+// Elementos
+
+const botaoContraste = document.getElementById("botao-contraste");
+const botaoAumentar = document.getElementById("botao-aumentar");
+const botaoDiminuir = document.getElementById("botao-diminuir");
+const botaoAnalisar = document.getElementById("botao-analisar");
+
+const resultado = document.getElementById("resultado");
+
+// Alternar alto contraste
+
+botaoContraste.addEventListener("click", () => {
+    document.body.classList.toggle("alto-contraste");
 });
 
-// Funcao para diminuir a letra ate o limite de 14 pixels
-btnDiminuir.addEventListener('click', function() {
-    if (tamanhoFonte > 14) {
+// Aumentar letra
+
+botaoAumentar.addEventListener("click", () => {
+    tamanhoFonte += 2;
+    document.body.style.fontSize = tamanhoFonte + "px";
+});
+
+// Diminuir letra
+
+botaoDiminuir.addEventListener("click", () => {
+    if (tamanhoFonte > 12) {
         tamanhoFonte -= 2;
-        corpoPagina.style.fontSize = tamanhoFonte + 'px';
+        document.body.style.fontSize = tamanhoFonte + "px";
     }
 });
 
-// Funcao para ligar ou desligar o modo de alto contraste
-btnContraste.addEventListener('click', function() {
-    corpoPagina.classList.toggle('alto-contraste');
+// Analise simples de golpes
+
+botaoAnalisar.addEventListener("click", () => {
+
+    const mensagem =
+        document.getElementById("texto-mensagem")
+        .value
+        .toLowerCase();
+
+    const palavrasSuspeitas = [
+        "pix",
+        "premio",
+        "urgente",
+        "senha",
+        "clique aqui",
+        "transferencia",
+        "ganhou",
+        "cartao bloqueado",
+        "codigo",
+        "banco"
+    ];
+
+    let encontrouRisco = false;
+
+    for (let palavra of palavrasSuspeitas) {
+
+        if (mensagem.includes(palavra)) {
+            encontrouRisco = true;
+            break;
+        }
+    }
+
+    if (encontrouRisco) {
+
+        resultado.style.backgroundColor = "#ffdddd";
+        resultado.style.color = "#990000";
+
+        resultado.innerHTML =
+            "ATENCAO: Esta mensagem possui sinais comuns de golpe. Nao informe dados pessoais, senhas ou realize pagamentos sem confirmar a origem.";
+
+    } else {
+
+        resultado.style.backgroundColor = "#ddffdd";
+        resultado.style.color = "#006600";
+
+        resultado.innerHTML =
+            "Nenhum sinal comum de golpe foi encontrado. Mesmo assim, mantenha cuidado antes de compartilhar informacoes.";
+    }
 });

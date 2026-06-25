@@ -1,85 +1,111 @@
-/* Variaveis de cores do tema padrao claro */
-:root {
-    --cor-fundo: #f4f4f9;
-    --cor-texto: #333333;
-    --cor-fundo-cartao: #ffffff;
-    --cor-borda: #cccccc;
-    --cor-botao: #0056b3;
-    --cor-texto-botao: #ffffff;
-    --cor-destaque: #d9534f;
-}
+/* Configuracoes gerais */
 
-/* Variaveis de cores do modo de alto contraste */
-body.alto-contraste {
-    --cor-fundo: #000000;
-    --cor-texto: #ffffff;
-    --cor-fundo-cartao: #1a1a1a;
-    --cor-borda: #ffff00;
-    --cor-botao: #ffff00;
-    --cor-texto-botao: #000000;
-    --cor-destaque: #ffcc00;
-}
-
-/* Configuracoes gerais da pagina */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    font-size: 18px;
     margin: 0;
-    padding: 0;
-    font-size: 18px; /* Tamanho inicial da fonte */
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #f4f4f4;
+    color: #222;
+    transition: 0.3s;
 }
 
-/* Estilos da area superior */
-.cabecalho {
+/* Cabecalho */
+
+header {
+    background-color: #0057a3;
+    color: white;
     text-align: center;
     padding: 20px;
-    background-color: var(--cor-fundo-cartao);
-    border-bottom: 2px solid var(--cor-borda);
 }
 
-.controles-acessibilidade {
-    margin-top: 15px;
+/* Barra de acessibilidade */
+
+.barra-acessibilidade {
     display: flex;
     justify-content: center;
     gap: 10px;
+    padding: 15px;
     flex-wrap: wrap;
 }
 
-/* Aparencia dos botoes */
-.botao-acao {
-    background-color: var(--cor-botao);
-    color: var(--cor-texto-botao);
-    border: 2px solid var(--cor-borda);
-    padding: 10px 15px;
-    font-size: 1rem;
+.barra-acessibilidade button {
+    padding: 12px 18px;
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 5px;
+}
+
+/* Conteudo principal */
+
+.conteudo-principal {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Cartoes */
+
+.caixa-verificacao,
+.caixa-dicas {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Area de texto */
+
+textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Botoes */
+
+button {
+    background-color: #0057a3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #003f77;
+}
+
+/* Resultado */
+
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
     font-weight: bold;
 }
 
-.botao-acao:hover {
-    opacity: 0.9;
+/* Alto contraste */
+
+.alto-contraste {
+    background-color: black;
+    color: yellow;
 }
 
-/* Area de conteudo principal */
-.conteudo {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 15px;
+.alto-contraste header {
+    background-color: black;
+    color: yellow;
 }
 
-/* Visual dos blocos de texto */
-.cartao-dica {
-    background-color: var(--cor-fundo-cartao);
-    border: 2px solid var(--cor-borda);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+.alto-contraste .caixa-verificacao,
+.alto-contraste .caixa-dicas {
+    background-color: #111;
+    color: yellow;
 }
 
-.cartao-dica h2 {
-    color: var(--cor-destaque);
-    margin-top: 0;
+.alto-contraste textarea {
+    background-color: black;
+    color: yellow;
+    border: 2px solid yellow;
 }
