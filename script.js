@@ -1,29 +1,32 @@
-// Selecao dos elementos que serao controlados no site
-const botaoContraste = document.getElementById('botao-contraste');
-const botaoAumentar = document.getElementById('botao-aumentar');
-const botaoDiminuir = document.getElementById('botao-diminuir');
-const corpoPagina = document.body;
+// Selecionando os botoes do HTML atraves dos seus IDs
+const botaoAumentar = document.getElementById('botao-aumentar-letra');
+const botaoDiminuir = document.getElementById('botao-diminuir-letra');
+const botaoContraste = document.getElementById('botao-alto-contraste');
+const corpoDaPagina = document.body;
 
-// Tamanho inicial da fonte em pixels
-let tamanhoFonte Atual = 22;
+// Definindo o tamanho inicial da letra (em pixels)
+let tamanhoAtualDaLetra = 18;
+const tamanhoMaximo = 30; // Limite para nao quebrar o visual da pagina
+const tamanhoMinimo = 14; // Limite para nao ficar pequeno demais
 
-// Funcao para ligar ou desligar o modo de alto contraste
-botaoContraste.addEventListener('click', function() {
-    corpoPagina.classList.toggle('alto-contraste');
-});
-
-// Funcao para aumentar o tamanho da letra da pagina
+// Funcao para aumentar a letra
 botaoAumentar.addEventListener('click', function() {
-    if (tamanhoFonteAtual < 40) { // Limite maximo para nao quebrar o desenho da pagina
-        tamanhoFonteAtual = tamanhoFonteAtual + 2;
-        corpoPagina.style.fontSize = tamanhoFonteAtual + 'px';
+    if (tamanhoAtualDaLetra < tamanhoMaximo) {
+        tamanhoAtualDaLetra += 2; // Aumenta de 2 em 2 pixels
+        corpoDaPagina.style.fontSize = tamanhoAtualDaLetra + 'px';
     }
 });
 
-// Funcao para diminuir o tamanho da letra da pagina
+// Funcao para diminuir a letra
 botaoDiminuir.addEventListener('click', function() {
-    if (tamanhoFonteAtual > 18) { // Limite minimo para manter o texto legivel
-        tamanhoFonteAtual = tamanhoFonteAtual - 2;
-        corpoPagina.style.fontSize = tamanhoFonteAtual + 'px';
+    if (tamanhoAtualDaLetra > tamanhoMinimo) {
+        tamanhoAtualDaLetra -= 2; // Diminui de 2 em 2 pixels
+        corpoDaPagina.style.fontSize = tamanhoAtualDaLetra + 'px';
     }
+});
+
+// Funcao para ativar e desativar o Alto Contraste
+botaoContraste.addEventListener('click', function() {
+    // O 'toggle' adiciona a classe se ela nao existir, e remove se ela ja existir
+    corpoDaPagina.classList.toggle('alto-contraste');
 });

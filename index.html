@@ -1,47 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Seguranca contra Golpes</title>
+    <title>Guia de Protecao contra Golpes</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-    <header class="barra-acessibilidade">
-        <button id="botao-contraste" class="botao-controle">Alto Contraste</button>
-        <button id="botao-aumentar" class="botao-controle">Aumentar Letra</button>
-        <button id="botao-diminuir" class="botao-controle">Diminuir Letra</button>
+    <header class="cabecalho">
+        <h1>Guia de Protecao</h1>
+        <div class="painel-acessibilidade">
+            <button id="botao-aumentar-letra" class="botao-acessibilidade" aria-label="Aumentar tamanho da letra">A+</button>
+            <button id="botao-diminuir-letra" class="botao-acessibilidade" aria-label="Diminuir tamanho da letra">A-</button>
+            <button id="botao-alto-contraste" class="botao-acessibilidade" aria-label="Ativar ou desativar alto contraste">Alto Contraste</button>
+        </div>
     </header>
 
     <main class="conteudo-principal">
-        <h1 class="titulo-principal">Como se Proteger de Golpes na Internet e Telefone</h1>
-        
-        <section class="lista-dicas">
-            
-            <article class="cartao-dica">
-                <h2>1. Cuidado com Senhas e Dados</h2>
-                <p>Nao fale suas senhas para ninguem. Bancos e empresas conhecidas nunca pedem senhas ou dados do cartao por telefone ou mensagem.</p>
-            </article>
+        <section class="cartao-dica">
+            <h2>1. Golpes no WhatsApp</h2>
+            <p>Se alguem da sua familia pedir dinheiro emprestado por mensagem, <strong>nao faca o Pix imediatamente</strong>. Ligue para a pessoa usando o numero que voce ja tem salvo e confirme se e ela mesma.</p>
+        </section>
 
-            <article class="cartao-dica">
-                <h2>2. Atencao com Links Suspeitos</h2>
-                <p>Nao clique em links enviados por pessoas desconhecidas no Whatsapp ou por mensagem de texto. Eles podem roubar suas informacoes.</p>
-            </article>
+        <section class="cartao-dica">
+            <h2>2. Falsos Funcionarios de Banco</h2>
+            <p>O banco <strong>nunca</strong> liga pedindo sua senha, codigo de seguranca ou para voce entregar seu cartao a um motoboy. Se receber uma ligacao assim, desligue na hora.</p>
+        </section>
 
-            <article class="cartao-dica">
-                <h2>3. Golpe do Falso Parente</h2>
-                <p>Se alguem ligar pedindo dinheiro com urgencia dizendo ser seu filho, neto ou parente, desligue o telefone. Ligue voce mesmo para o numero antigo do seu parente para confirmar.</p>
-            </article>
-
-            <article class="cartao-dica">
-                <h2>4. O Banco Nao Envia Motoqueiro</h2>
-                <p>Se alguem ligar dizendo que seu cartao foi clonado e que vao mandar um motoqueiro buscar, nao entregue nada. Isso e um golpe.</p>
-            </article>
-
+        <section class="cartao-dica">
+            <h2>3. Links Suspeitos</h2>
+            <p>Nao clique em links de promocoes milagrosas, mensagens de "conta bloqueada" ou cobrancas que chegam por SMS ou e-mail. Na duvida, va ate sua agencia ou ligue para o numero oficial que fica atras do seu cartao.</p>
         </section>
     </main>
 
-    <script src="controle.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

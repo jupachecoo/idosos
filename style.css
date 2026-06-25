@@ -1,95 +1,95 @@
-/* Estilos padrao para facilitar a leitura */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 22px; /* Tamanho inicial maior para ajudar a leitura de idosos */
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #222222;
-    margin: 0;
-    padding: 20px;
+/* Variaveis de cores padrao (modo normal) */
+:root {
+    --cor-fundo: #f0f4f8;
+    --cor-texto: #333333;
+    --cor-fundo-cartao: #ffffff;
+    --cor-borda-cartao: #d1d8e0;
+    --cor-botao: #0056b3;
+    --cor-texto-botao: #ffffff;
+    --cor-destaque: #d9534f;
 }
 
-/* Barra com os botoes de controle */
-.barra-acessibilidade {
-    background-color: #333333;
-    padding: 15px;
+/* Variaveis de cores para o modo Alto Contraste */
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+    --cor-fundo-cartao: #1a1a1a;
+    --cor-borda-cartao: #ffff00;
+    --cor-botao: #ffff00;
+    --cor-texto-botao: #000000;
+    --cor-destaque: #ffcc00;
+}
+
+/* Estilos gerais do corpo da pagina */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+    /* Tamanho base da fonte que sera alterado pelo JavaScript */
+    font-size: 18px; 
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos do cabecalho */
+.cabecalho {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-fundo-cartao);
+    border-bottom: 2px solid var(--cor-borda-cartao);
+}
+
+/* Estilos do painel de acessibilidade */
+.painel-acessibilidade {
+    margin-top: 15px;
     display: flex;
-    gap: 15px;
     justify-content: center;
-    margin-bottom: 30px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
-/* Estilo padrao dos botoes */
-.botao-controle {
-    font-size: 18px;
-    padding: 12px 24px;
-    cursor: pointer;
-    background-color: #ffffff;
-    color: #333333;
-    border: 3px solid #000000;
+/* Estilos dos botoes */
+.botao-acessibilidade {
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-botao);
+    border: 2px solid var(--cor-botao);
+    padding: 10px 20px;
+    font-size: 1em; /* Usa a medida 'em' para crescer junto com a fonte do corpo */
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* Organizacao do conteudo */
+.botao-acessibilidade:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Estilos do conteudo principal */
 .conteudo-principal {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
-.titulo-principal {
-    text-align: center;
-    color: #111111;
-    margin-bottom: 40px;
-}
-
-.lista-dicas {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-/* Cartoes de dicas individuais */
+/* Estilos dos cartoes de dicas */
 .cartao-dica {
-    background-color: #ffffff;
-    padding: 25px;
-    border: 3px solid #cccccc;
-    border-radius: 8px;
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda-cartao);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .cartao-dica h2 {
     margin-top: 0;
-    color: #0056b3;
+    color: var(--cor-destaque);
 }
 
-/* Classes obrigatorias para o Modo de Alto Contraste */
-body.alto-contraste {
-    background-color: #000000 !important;
-    color: #ffff00 !important; /* Texto amarelo no fundo preto para alto contraste */
-}
-
-body.alto-contraste .barra-acessibilidade {
-    background-color: #000000;
-    border-bottom: 3px solid #ffff00;
-}
-
-body.alto-contraste .botao-controle {
-    background-color: #000000;
-    color: #ffff00;
-    border: 3px solid #ffff00;
-}
-
-body.alto-contraste .cartao-dica {
-    background-color: #000000;
-    color: #ffff00;
-    border: 3px solid #ffff00;
-}
-
-body.alto-contraste .cartao-dica h2 {
-    color: #ffff00;
-}
-
-body.alto-contraste .titulo-principal {
-    color: #ffff00;
+.cartao-dica strong {
+    color: var(--cor-destaque);
 }
