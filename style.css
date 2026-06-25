@@ -1,5 +1,4 @@
-
-/* CONFIGURACOES GERAIS E ACESSIBILIDADE */
+/* GENERAL CONFIGURATIONS AND ACCESSIBILITY */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,10 +10,10 @@ body {
     background-color: #f4f6f9;
     color: #1a1a1a;
     line-height: 1.6;
-    padding-bottom: 80px; /* Espaco para o rodape nao cobrir o conteudo */
+    padding-bottom: 80px; /* Space so the footer doesn't cover the content */
 }
 
-/* TOPO DO APLICATIVO */
+/* APPLICATION HEADER */
 header {
     background-color: #004687;
     color: white;
@@ -34,7 +33,7 @@ header p {
     color: #e0f0ff;
 }
 
-/* CONTEUDO PRINCIPAL */
+/* MAIN CONTENT */
 main {
     max-width: 600px;
     margin: 20px auto;
@@ -54,7 +53,7 @@ main {
     font-size: 1.2rem;
 }
 
-/* CARTOES DE DICAS */
+/* TIP CARDS */
 .card-dica {
     background-color: #ffffff;
     border-radius: 12px;
@@ -65,7 +64,7 @@ main {
     transition: opacity 0.3s ease;
 }
 
-/* Cores de alerta */
+/* Alert colors */
 .card-dica.alerta { border-top: 8px solid #d9381e; }
 .card-dica.senha { border-top: 8px solid #2e7d32; }
 .card-dica.ajuda { border-top: 8px solid #f57c00; }
@@ -82,14 +81,14 @@ main {
     margin-bottom: 15px;
 }
 
-/* Classe dinamica para quando o idoso marcar como lido */
+/* Dynamic class for when the senior marks it as read */
 .card-dica.lido {
     opacity: 0.6;
     border: 2px solid #2e7d32;
     background-color: #e8f5e9;
 }
 
-/* BOTOES GRANDES PARA FACILITAR O CLIQUE */
+/* LARGE BUTTONS FOR EASY CLICKING */
 .botao-saber-mais {
     display: block;
     width: 100%;
@@ -109,7 +108,7 @@ main {
     background-color: #002d58;
 }
 
-/* RODAPE FIXO DE SUPORTE */
+/* FIXED SUPPORT FOOTER */
 footer {
     background-color: #222222;
     color: white;

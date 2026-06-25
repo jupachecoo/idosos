@@ -1,23 +1,23 @@
-// Aguarda a pagina carregar completamente
-document.addEventListener("DOMContentLoaded", function()) {
+// Waits for the page to load completely
+document.addEventListener("DOMContentLoaded", function() {
     
-    // Seleciona todos os botoes de dicas
+    // Selects all tip buttons
     const botoes = document.querySelectorAll(".botao-saber-mais");
 
     botoes.forEach(function(botao) {
         botao.addEventListener("click", function() {
-            // Encontra o cartao (card-dica) mais proximo do botao clicado
+            // Finds the card (card-dica) closest to the clicked button
             const card = this.closest(".card-dica");
             
-            // Modifica o estilo do cartao para mostrar que foi lido
+            // Modifies the card style to show it has been read
             card.classList.toggle("lido");
             
-            // Muda o texto do botao de forma clara
+            // Changes the button text clearly
             if (card.classList.contains("lido")) {
-                this.textContent = " Dica Concluida!";
+                this.textContent = " Tip Completed!";
                 this.style.backgroundColor = "#2e7d32";
             } else {
-                this.textContent = "Entendi esta dica";
+                this.textContent = "I understand this tip";
                 this.style.backgroundColor = "#004687";
             }
         });
