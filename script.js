@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 this.textContent = "I understand this tip";
                 this.style.backgroundColor = "#004687";
-            }
+                document.addEventListener("DOMContentLoaded", function() {
+            })
         });
     });
 });
