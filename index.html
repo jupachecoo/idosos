@@ -1,92 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Protecao Contra Golpes</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protecao Contra Golpes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="cabecalho">
-    <h1>Protecao Contra Golpes</h1>
-    <p>Aplicativo de ajuda para idosos</p>
-</header>
+    <!-- Cabecalho principal -->
+    <header class="cabecalho">
+        <h1>Protecao Contra Golpes</h1>
+        <p>Ajuda para identificar tentativas de golpe</p>
+    </header>
 
-<section class="barra-acessibilidade">
+    <!-- Barra de acessibilidade -->
+    <section class="barra-acessibilidade">
 
-    <button id="botao-contraste">
-        Alto Contraste
-    </button>
-
-    <button id="botao-aumentar">
-        Aumentar Letra
-    </button>
-
-    <button id="botao-diminuir">
-        Diminuir Letra
-    </button>
-
-</section>
-
-<main class="conteudo">
-
-    <section class="cartao">
-
-        <h2>Verificar Mensagem</h2>
-
-        <textarea
-        id="texto-mensagem"
-        placeholder="Cole aqui a mensagem recebida"
-        rows="8"></textarea>
-
-        <button id="botao-analisar">
-            Analisar Mensagem
+        <button id="botao-contraste">
+            Alto Contraste
         </button>
 
-        <div id="resultado"></div>
+        <button id="botao-aumentar">
+            Aumentar Letra
+        </button>
+
+        <button id="botao-diminuir">
+            Diminuir Letra
+        </button>
 
     </section>
 
-    <section class="cartao">
+    <main class="conteudo-principal">
 
-        <h2>Dicas Para Nao Cair Em Golpes</h2>
+        <!-- Detector -->
+        <section class="cartao">
 
-        <ul>
-            <li>Nunca informe sua senha.</li>
-            <li>Nunca compartilhe codigos recebidos por SMS.</li>
-            <li>Desconfie de premios inesperados.</li>
-            <li>Desconfie de mensagens com urgencia.</li>
-            <li>Bancos nao pedem senha por telefone.</li>
-            <li>Confirme pedidos de PIX com familiares.</li>
-            <li>Nao clique em links desconhecidos.</li>
-            <li>Antes de pagar, confira o nome do destinatario.</li>
-            <li>Golpistas tentam criar pressao e medo.</li>
-            <li>Na duvida, pare e consulte alguem de confianca.</li>
-        </ul>
+            <h2>Verificar Mensagem</h2>
 
-    </section>
+            <label for="texto-mensagem">
+                Cole a mensagem recebida:
+            </label>
 
-    <section class="cartao">
+            <textarea
+                id="texto-mensagem"
+                rows="8"
+                placeholder="Cole aqui a mensagem">
+            </textarea>
 
-        <h2>Checklist Antes De Fazer PIX</h2>
+            <button id="botao-analisar">
+                Analisar
+            </button>
 
-        <ul>
-            <li>Verifique o nome da pessoa.</li>
-            <li>Confira o valor.</li>
-            <li>Confirme o motivo da transferencia.</li>
-            <li>Fale com a pessoa por telefone se necessario.</li>
-            <li>Nunca transfira dinheiro por pressao.</li>
-        </ul>
+            <div id="resultado"></div>
 
-    </section>
+        </section>
 
-</main>
+        <!-- Dicas -->
+        <section class="cartao">
 
-<script src="script.js"></script>
+            <h2>Dicas Importantes</h2>
+
+            <ul>
+                <li>Nunca informe senhas.</li>
+                <li>Nunca compartilhe codigos recebidos por SMS.</li>
+                <li>Desconfie de premios inesperados.</li>
+                <li>Bancos nao pedem senha por mensagem.</li>
+                <li>Nao clique em links desconhecidos.</li>
+                <li>Confirme pedidos de dinheiro por telefone.</li>
+                <li>Confira o destinatario antes de fazer PIX.</li>
+                <li>Golpistas costumam criar senso de urgencia.</li>
+                <li>Na duvida consulte um familiar.</li>
+                <li>Nunca envie documentos para desconhecidos.</li>
+            </ul>
+
+        </section>
+
+        <!-- Checklist -->
+        <section class="cartao">
+
+            <h2>Checklist Antes De Fazer PIX</h2>
+
+            <ul>
+                <li>Verifique o nome do destinatario.</li>
+                <li>Confirme o valor.</li>
+                <li>Confira a chave PIX.</li>
+                <li>Fale com a pessoa por telefone.</li>
+                <li>Nao transfira sob pressao.</li>
+            </ul>
+
+        </section>
+
+        <!-- Simulador -->
+        <section class="cartao">
+
+            <h2>Avaliar Situacao</h2>
+
+            <p>Responda:</p>
+
+            <label>
+                <input type="checkbox" class="pergunta-risco">
+                A mensagem pede dinheiro?
+            </label>
+
+            <label>
+                <input type="checkbox" class="pergunta-risco">
+                Existe urgencia?
+            </label>
+
+            <label>
+                <input type="checkbox" class="pergunta-risco">
+                Foi enviada por desconhecido?
+            </label>
+
+            <label>
+                <input type="checkbox" class="pergunta-risco">
+                Pede senha ou codigo?
+            </label>
+
+            <button id="botao-avaliar">
+                Avaliar Risco
+            </button>
+
+            <div id="resultado-risco"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>

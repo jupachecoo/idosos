@@ -1,63 +1,102 @@
-document.addEventListener("DOMContentLoaded", function(){
+// Aguarda carregamento completo da pagina
 
-    let tamanhoFonte = 20;
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Controle do tamanho da fonte
+
+    let tamanhoFonte =
+        Number(localStorage.getItem("tamanhoFonte")) || 20;
+
+    document.body.style.fontSize =
+        tamanhoFonte + "px";
+
+    // Elementos
 
     const botaoContraste =
-    document.getElementById("botao-contraste");
+        document.getElementById("botao-contraste");
 
     const botaoAumentar =
-    document.getElementById("botao-aumentar");
+        document.getElementById("botao-aumentar");
 
     const botaoDiminuir =
-    document.getElementById("botao-diminuir");
+        document.getElementById("botao-diminuir");
 
     const botaoAnalisar =
-    document.getElementById("botao-analisar");
+        document.getElementById("botao-analisar");
+
+    const botaoAvaliar =
+        document.getElementById("botao-avaliar");
 
     const resultado =
-    document.getElementById("resultado");
+        document.getElementById("resultado");
 
-    // Alto contraste
+    const resultadoRisco =
+        document.getElementById("resultado-risco");
 
-    botaoContraste.addEventListener("click", function(){
+    // Recupera contraste salvo
+
+    if (localStorage.getItem("contraste") === "ativo") {
+        document.body.classList.add("alto-contraste");
+    }
+
+    // Botao contraste
+
+    botaoContraste.addEventListener("click", function () {
 
         document.body.classList.toggle("alto-contraste");
 
+        if (document.body.classList.contains("alto-contraste")) {
+            localStorage.setItem("contraste", "ativo");
+        } else {
+            localStorage.removeItem("contraste");
+        }
+
     });
 
-    // Aumentar fonte
+    // Aumentar letra
 
-    botaoAumentar.addEventListener("click", function(){
+    botaoAumentar.addEventListener("click", function () {
 
         tamanhoFonte += 2;
 
         document.body.style.fontSize =
-        tamanhoFonte + "px";
+            tamanhoFonte + "px";
+
+        localStorage.setItem(
+            "tamanhoFonte",
+            tamanhoFonte
+        );
 
     });
 
-    // Diminuir fonte
+    // Diminuir letra
 
-    botaoDiminuir.addEventListener("click", function(){
+    botaoDiminuir.addEventListener("click", function () {
 
-        if(tamanhoFonte > 14){
+        if (tamanhoFonte > 14) {
 
             tamanhoFonte -= 2;
 
             document.body.style.fontSize =
-            tamanhoFonte + "px";
+                tamanhoFonte + "px";
+
+            localStorage.setItem(
+                "tamanhoFonte",
+                tamanhoFonte
+            );
         }
 
     });
 
     // Detector de golpes
 
-    botaoAnalisar.addEventListener("click", function(){
+    botaoAnalisar.addEventListener("click", function () {
 
         const texto =
-        document.getElementById("texto-mensagem")
-        .value
-        .toLowerCase();
+            document
+            .getElementById("texto-mensagem")
+            .value
+            .toLowerCase();
 
         const palavrasSuspeitas = [
 
@@ -66,46 +105,104 @@ document.addEventListener("DOMContentLoaded", function(){
             "premio",
             "ganhou",
             "senha",
-            "clique aqui",
-            "transferencia",
             "codigo",
+            "transferencia",
+            "clique aqui",
             "cartao bloqueado",
-            "banco"
+            "banco",
+            "deposito",
+            "dinheiro"
 
         ];
 
-        let risco = false;
+        let risco = 0;
 
-        for(let palavra of palavrasSuspeitas){
+        palavrasSuspeitas.forEach(function (palavra) {
 
-            if(texto.includes(palavra)){
-
-                risco = true;
-                break;
+            if (texto.includes(palavra)) {
+                risco++;
             }
+
+        });
+
+        if (risco >= 2) {
+
+            resultado.style.background = "#ffd6d6";
+            resultado.style.color = "#990000";
+
+            resultado.innerHTML =
+                "ALERTA: Foram encontrados varios sinais comuns de golpe. Nao envie dinheiro e confirme as informacoes antes de agir.";
+
+        } else if (risco === 1) {
+
+            resultado.style.background = "#fff4cc";
+            resultado.style.color = "#996600";
+
+            resultado.innerHTML =
+                "CUIDADO: Existe um possivel sinal de golpe. Verifique a origem da mensagem.";
+
+        } else {
+
+            resultado.style.background = "#dfffdc";
+            resultado.style.color = "#006600";
+
+            resultado.innerHTML =
+                "Nenhum sinal comum foi encontrado. Mesmo assim mantenha a atencao.";
+
         }
 
-        if(risco){
+    });
 
-            resultado.style.background =
-            "#ffdddd";
+    // Avaliador de risco
 
-            resultado.style.color =
-            "#990000";
+    botaoAvaliar.addEventListener("click", function () {
 
-            resultado.innerHTML =
-            "ATENCAO. Esta mensagem possui indicios comuns de golpe. Nao envie dinheiro, nao informe senhas e confirme as informacoes com alguem de confianca.";
+        const perguntas =
+            document.querySelectorAll(".pergunta-risco");
 
-        }else{
+        let total = 0;
 
-            resultado.style.background =
-            "#ddffdd";
+        perguntas.forEach(function (item) {
 
-            resultado.style.color =
-            "#006600";
+            if (item.checked) {
+                total++;
+            }
 
-            resultado.innerHTML =
-            "Nenhum indicio comum de golpe foi encontrado. Mesmo assim mantenha a atencao.";
+        });
+
+        if (total >= 3) {
+
+            resultadoRisco.style.background =
+                "#ffd6d6";
+
+            resultadoRisco.style.color =
+                "#990000";
+
+            resultadoRisco.innerHTML =
+                "RISCO ALTO. Existe grande chance de tentativa de golpe.";
+
+        } else if (total >= 1) {
+
+            resultadoRisco.style.background =
+                "#fff4cc";
+
+            resultadoRisco.style.color =
+                "#996600";
+
+            resultadoRisco.innerHTML =
+                "RISCO MEDIO. Verifique todas as informacoes antes de agir.";
+
+        } else {
+
+            resultadoRisco.style.background =
+                "#dfffdc";
+
+            resultadoRisco.style.color =
+                "#006600";
+
+            resultadoRisco.innerHTML =
+                "RISCO BAIXO. Nenhum sinal importante foi identificado.";
+
         }
 
     });
