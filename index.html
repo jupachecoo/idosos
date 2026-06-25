@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguranca Digital para a Melhor Idade</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Guia de Seguranca contra Golpes</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-    <header>
-        <h1>Guia de Seguranca Digital</h1>
-        <p>Aprenda a se proteger na internet de forma simples</p>
+    <header class="barra-acessibilidade">
+        <button id="botao-contraste" class="botao-controle">Alto Contraste</button>
+        <button id="botao-aumentar" class="botao-controle">Aumentar Letra</button>
+        <button id="botao-diminuir" class="botao-controle">Diminuir Letra</button>
     </header>
 
-    <main>
-        <section class="introducao">
-            <p><strong>Ola!</strong> A internet e um lugar maravilhoso para conversar e aprender, mas precisamos ter alguns cuidados. Veja as dicas importantes abaixo:</p>
+    <main class="conteudo-principal">
+        <h1 class="titulo-principal">Como se Proteger de Golpes na Internet e Telefone</h1>
+        
+        <section class="lista-dicas">
+            
+            <article class="cartao-dica">
+                <h2>1. Cuidado com Senhas e Dados</h2>
+                <p>Nao fale suas senhas para ninguem. Bancos e empresas conhecidas nunca pedem senhas ou dados do cartao por telefone ou mensagem.</p>
+            </article>
+
+            <article class="cartao-dica">
+                <h2>2. Atencao com Links Suspeitos</h2>
+                <p>Nao clique em links enviados por pessoas desconhecidas no Whatsapp ou por mensagem de texto. Eles podem roubar suas informacoes.</p>
+            </article>
+
+            <article class="cartao-dica">
+                <h2>3. Golpe do Falso Parente</h2>
+                <p>Se alguem ligar pedindo dinheiro com urgencia dizendo ser seu filho, neto ou parente, desligue o telefone. Ligue voce mesmo para o numero antigo do seu parente para confirmar.</p>
+            </article>
+
+            <article class="cartao-dica">
+                <h2>4. O Banco Nao Envia Motoqueiro</h2>
+                <p>Se alguem ligar dizendo que seu cartao foi clonado e que vao mandar um motoqueiro buscar, nao entregue nada. Isso e um golpe.</p>
+            </article>
+
         </section>
-
-        <article class="card-dica alerta">
-            <h2> 1. Cuidado com Links no WhatsApp</h2>
-            <p>Se voce recebeu uma mensagem de um banco, de uma marca famosa ou ate de um conhecido dizendo que voce ganhou um premio ou precisa atualizar seus dados urgente, <strong>nao clique no link</strong>.</p>
-            <p>Bancos de verdade nao pedem senhas ou dados urgentes por mensagem.</p>
-            <button class="botao-saber-mais">Entendi esta dica</button>
-        </article>
-
-        <article class="card-dica senha">
-            <h2> 2. Crie Senhas Seguras</h2>
-            <p>Evite usar sua data de nascimento, nome de netos ou sequencias simples como "123456".</p>
-            <p>Uma boa dica e usar uma frase que voce goste e misturar com numeros. Exemplo: <strong>CafeComBolo2026</strong>. Anote em um caderno em casa para nao esquecer.</p>
-            <button class="botao-saber-mais">Entendi esta dica</button>
-        </article>
-
-        <article class="card-dica ajuda">
-            <h2> 3. Na duvida, peca ajuda</h2>
-            <p>Se algo parecer estranho, bom demais para ser verdade, ou se voce estiver com medo de fazer uma operacao no celular, <strong>pare e peca ajuda</strong> para um filho, neto ou alguem de extrema confianca.</p>
-            <p>E melhor perguntar duas vezes do que cair em uma armadilha.</p>
-            <button class="botao-saber-mais">Entendi esta dica</button>
-        </article>
     </main>
 
-    <footer>
-        Duvidas? Ligue para um familiar ou converse com seu banco.
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="controle.js"></script>
 </body>
 </html>
